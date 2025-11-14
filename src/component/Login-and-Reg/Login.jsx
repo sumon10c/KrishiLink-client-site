@@ -1,8 +1,22 @@
 import Link from "daisyui/components/link";
-import React from "react";
+import React, { use } from "react";
 import { NavLink } from "react-router";
+import { AuthContext } from "../../context/AuthProvider";
 
 const Login = () => {
+
+
+  const {singInWithGoogle}= use(AuthContext)
+  const handleGoogleSingIn =()=>{
+    singInWithGoogle()
+    .then(result=>{
+      console.log(result.user)
+    })
+    .catch(error=>{
+      console.log(error)
+    })
+  }
+
   return (
     <div className="hero bg-base-200 min-h-screen">
       <div className="hero-content flex-col lg:flex-row-reverse">
@@ -18,7 +32,7 @@ const Login = () => {
                 <a className="link link-hover">Forgot password?</a>
               </div>
               <button className="btn btn-neutral mt-4">Login</button>
-              <button className="btn bg-white text-black border-[#e5e5e5]">
+              <button onClick={handleGoogleSingIn} className="btn bg-white text-black border-[#e5e5e5]">
                 <svg
                   aria-label="Google logo"
                   width="16"

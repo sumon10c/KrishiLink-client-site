@@ -12,6 +12,9 @@ import Error from './component/ErrorPage/Error.jsx';
 import Login from './component/Login-and-Reg/Login.jsx';
 import Register from './component/Login-and-Reg/Register.jsx';
 import AuthProvider from './context/AuthProvider.jsx';
+import MyPost from './component/Other/MyPost.jsx';
+import AddCrops from './component/Other/AddCrops.jsx';
+import Profile from './component/Login-and-Reg/Profile.jsx';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +40,18 @@ const router = createBrowserRouter([
       {
         path:"/register",
         Component:Register
+      },
+      {
+        path:"/myPost",
+        Component:MyPost
+      },
+      {
+        path:'/addCrops',
+        Component:AddCrops
+      },
+      {
+        path:'/profile',
+        Component:Profile
       }
     ]
   },
