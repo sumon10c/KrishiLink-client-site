@@ -96,17 +96,24 @@ const Navbar = () => {
         {user ? (
           <button
             onClick={handleSingOut}
-            className="btn bg-gradient-to-r from-[#ffe600] to-[#00c853] text-white md:text-[20px] font-bold"
+            className="btn bg-gradient-to-r from-[#ffe600] to-[#00c853] hover:from-red-600 hover:to-[#00c853] text-white md:text-[20px] font-bold"
           >
             LogOut
           </button>
         ) : (
-          <NavLink to="/login">
-            {" "}
-            <button className="btn bg-gradient-to-r from-[#ffe600] to-[#00c853] text-white md:text-[20px] font-bold">
-              LogIn
-            </button>
-          </NavLink>
+          <div className="flex gap-3">
+            <NavLink to="/login">
+              <button className="btn hover:from-red-600 hover:to-[#00c853] bg-gradient-to-r from-[#ffe600] to-[#00c853] text-white md:text-[20px] font-bold">
+                LogIn
+              </button>
+            </NavLink>
+
+            <NavLink to="/register">
+              <button className="btn hover:from-red-600 hover:to-[#00c853] bg-gradient-to-r from-[#ffe600] to-[#00c853] text-white md:text-[20px] font-bold">
+                Register
+              </button>
+            </NavLink>
+          </div>
         )}
       </div>
     </div>
