@@ -11,7 +11,7 @@ const RecentProducts = ({recentProductsPromise}) => {
         </div>
         <div className='grid md:grid-cols-3 w-max mx-auto gap-8 mt-5'>
         {
-            recentProducts.map(crop=><RecentCrops key={crop._id} crop={crop}></RecentCrops>)
+            recentProducts.map(crop=><RecentCrops crop={crop} key={crop._id}></RecentCrops>)
         }
         </div>
         </div>

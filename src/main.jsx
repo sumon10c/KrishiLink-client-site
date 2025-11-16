@@ -15,6 +15,7 @@ import AuthProvider from './context/AuthProvider.jsx';
 import MyPost from './component/Other/MyPost.jsx';
 import AddCrops from './component/Other/AddCrops.jsx';
 import Profile from './component/Login-and-Reg/Profile.jsx';
+import CropDetalis from './component/CropDetalis.jsx';
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,11 @@ const router = createBrowserRouter([
       {
         path:'/profile',
         Component:Profile
+      },
+      {
+        path:'/cropDetails/:id',
+        loader: ({ params }) => fetch(`http://localhost:3000/products/${params.id}`),  
+        Component:CropDetalis
       }
     ]
   },

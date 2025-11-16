@@ -1,11 +1,16 @@
 import Link from "daisyui/components/link";
 import React, { use, useContext, useState } from "react";
-import { NavLink } from "react-router";
+import { Navigate, NavLink, useLocation, useNavigate,  } from "react-router";
 import { AuthContext } from "../../context/AuthProvider";
 
 const Login = () => {
   const { singInUser } = useContext(AuthContext);
   const [error, setError] = useState("");
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from || "/"; // Default "/" যদি state না থাকে
+
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -16,6 +21,7 @@ const Login = () => {
       .then((result) => {
         console.log(result.user);
         setError("");
+        navigate(from, { replace: true });
       })
       .catch((err) => setError("Wrong email or password",err));
 
@@ -26,7 +32,10 @@ const Login = () => {
   const handleGoogleSingIn = () => {
     singInWithGoogle()
       .then((result) => {
-        console.log(result.user);
+        navigate(from, { replace: true });
+        console.log(result.user)
+        
+       
       })
       .catch((error) => {
         console.log(error);
