@@ -16,6 +16,7 @@ import MyPost from './component/Other/MyPost.jsx';
 import AddCrops from './component/Other/AddCrops.jsx';
 import Profile from './component/Login-and-Reg/Profile.jsx';
 import CropDetalis from './component/CropDetalis.jsx';
+import MyInterest from './component/Other/MyInterest.jsx';
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
       {
         path:'/addCrops',
         Component:AddCrops
+      },
+      {
+        path:'/myInterest',
+        Component:MyInterest
       },
       {
         path:'/profile',

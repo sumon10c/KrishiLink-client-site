@@ -26,6 +26,9 @@ const Navbar = () => {
             <NavLink to="/addCrops">Add Crops</NavLink>
           </li>
           <li className="text-[18px] font-bold">
+            <NavLink to="/myInterest">My Interest</NavLink>
+          </li>
+          <li className="text-[18px] font-bold">
             <NavLink to="/profile">Profile</NavLink>
           </li>
         </>
@@ -48,6 +51,9 @@ const Navbar = () => {
           </li>
           <li className="text-white text-[18px] font-bold hover:text-gray-300">
             <NavLink to="/addCrops">Add Crops</NavLink>
+          </li>
+          <li className="text-white text-[18px] font-bold">
+            <NavLink to="/myInterest">My Interest</NavLink>
           </li>
           <li className="text-white text-[18px] font-bold ">
             <NavLink to="/profile">Profile</NavLink>
