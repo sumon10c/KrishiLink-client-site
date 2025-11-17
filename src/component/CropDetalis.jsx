@@ -9,8 +9,8 @@ const CropDetalis = () => {
         <div className="hero bg-base-200 min-h-screen bg-gradient-to-r from-green-800 to-green-500">
         <div className="hero-content flex-col lg:flex-row">
           <img
-            src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
-            className="w-[400px] h-[450px] md:ml-[-200px] rounded-lg shadow-2xl"
+            src={image}
+            className="w-[450px] h-[450px] md:ml-[-200px] rounded-lg shadow-2xl"
           />
           <div className='md:ml-[70px]'>
             <h1 className="text-5xl text-white font-bold">Name : {name}</h1>

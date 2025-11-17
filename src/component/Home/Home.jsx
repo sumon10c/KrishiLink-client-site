@@ -1,6 +1,7 @@
 import React from 'react';
 import Banner from './Banner';
 import RecentProducts from './RecentProducts';
+
  
 
 const recentProductsPromise = fetch('http://localhost:3000/recent-products')
