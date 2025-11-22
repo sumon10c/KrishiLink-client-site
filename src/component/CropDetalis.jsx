@@ -39,10 +39,7 @@ const CropDetalis = () => {
 
     if (!quantity || quantity <= 1) {
       alert("Please select your Quantity more than 1")
-    
-      return
-       
-      
+         return
     }
   };
 
