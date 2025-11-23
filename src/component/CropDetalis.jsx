@@ -31,20 +31,35 @@ const CropDetalis = () => {
     e.preventDefault();
     const name = e.target.name.value;
     const email = e.target.email.value;
+    const cropName = e.target.cropName.value
     const quantity = Number(e.target.quantity.value);
     const message = e.target.message.value;
-    // const totalPrice = e.target.totalPrice.value;
-    console.log(name, email, quantity, message, totalPrice, _id);
-
+    // console.log(name, email, quantity, message, totalPrice, _id);
+    const newInterest = {
+      product: _id,
+      buyer_name: name,
+      buyer_email: email,
+      crop_name : cropName,
+      quantity : quantity,
+      status: "panding",
+    };
+    fetch("http://localhost:3000/interest", {
+      method: "POST",
+      headers:{
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(newInterest)
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("after placing data", data);
+      });
 
     if (!quantity || quantity <= 1) {
-      alert("Please select your Quantity more than 1")
-         return
+      alert("Please select your Quantity more than 1");
+      return;
     }
   };
-
-
- 
 
   return (
     <div className="hero bg-base-200 min-h-screen bg-gradient-to-r from-green-800 to-green-500">
@@ -81,6 +96,7 @@ const CropDetalis = () => {
               <h3 className="font-bold text-lg">Your Interest</h3>
               <form onSubmit={handleInterestSubmit}>
                 <fieldset className="fieldset">
+
                   <label className="label">Name</label>
                   <input
                     name="name"
@@ -96,6 +112,13 @@ const CropDetalis = () => {
                     className="input"
                     readOnly
                     defaultValue={user.email}
+                  />
+                  <label className="label">Crop Name</label>
+                  <input
+                    name="cropName"
+                    type="text"
+                    className="input"
+                    placeholder="Enter Your Crop Name"
                   />
                   <label className="label">Quantity (number input)</label>
                   <input
