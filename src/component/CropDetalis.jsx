@@ -35,6 +35,23 @@ const CropDetalis = () => {
     const quantity = Number(e.target.quantity.value);
     const message = e.target.message.value;
     // console.log(name, email, quantity, message, totalPrice, _id);
+
+
+
+      // ❗ Validation first
+  if (!quantity || quantity <= 1) {
+    interestModalRef.current.close();
+    Swal.fire({
+      icon: "error",
+      title: "Oops!",
+      text: "Please select quantity more than 1",
+      timer: 3000,
+      showConfirmButton: false
+    });
+    return; // Stop Submit
+  }
+
+
     const newInterest = {
       product: _id,
       buyer_name: name,
@@ -52,11 +69,31 @@ const CropDetalis = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+         // Submit success alert
+      Swal.fire({
+        icon: "success",
+        title: "Interest Submitted!",
+        text: "Visit My Interest site.",
+        timer: 5000,
+        showConfirmButton: false
+      });
         console.log("after placing data", data);
+        interestModalRef.current.close();
+
+        
+        setBuyQuantity(0);
       });
 
     if (!quantity || quantity <= 1) {
-      alert("Please select your Quantity more than 1");
+      interestModalRef.current.close();
+      Swal.fire({
+        icon: "error",
+        title: "Offs!",
+        text: "Please select your Quantity more than 1",
+        timer: 5000,
+        showConfirmButton: false
+      });
+     
       return;
     }
   };
