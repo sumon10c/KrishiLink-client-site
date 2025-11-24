@@ -52,17 +52,15 @@ const Profile = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        console.log("Updated:", data);
 
-        if (data.modifiedCount > 0) {
-          setDbUser((prev) => ({
-            ...prev,
-            name,
-            photo,
-            bio,
-            phone,
-          }));
-        }
+        setDbUser((prev) => ({
+          ...prev,
+          name,
+          photo,
+          bio,
+          phone,
+        }));
       });
 
     setOpenModal(false);
@@ -80,13 +78,12 @@ const Profile = () => {
         <h1 className="text-2xl font-bold mt-3 capitalize">
           {dbUser?.name || user?.displayName}
         </h1>
-    
+
         <h1 className="text-1xl text-gray-600 font-bold mt-3 capitalize">
-         
-            <span className="font-bold"></span> {dbUser?.bio ? dbUser.bio : "No bio added yet"}
+          <span className="font-bold">Bio:</span>{" "}
+          {dbUser?.bio || "No bio added yet"}
         </h1>
         <p className="text-gray-600">{user?.email}</p>
-        
       </div>
 
       <div className="mt-6">
@@ -155,8 +152,8 @@ const Profile = () => {
                 className="input input-bordered w-full"
                 placeholder="Photo URL"
               />
-             
-             <label className="label">Add Bio</label>
+
+              <label className="label">Add Bio</label>
               <input
                 type="text"
                 name="bio"
@@ -164,8 +161,6 @@ const Profile = () => {
                 className="input input-bordered w-full"
                 placeholder="Add Your Bio"
               />
-
-
 
               <label className="label">Phone Number</label>
               <input
