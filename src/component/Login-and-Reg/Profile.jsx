@@ -67,7 +67,7 @@ const Profile = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto mt-10 bg-white shadow-xl rounded-xl p-6">
+    <div className="max-w-lg mx-auto mt-10 bg-gradient-to-r from-[#ffe600] to-[#00c853] hover:from-red-600 hover:to-[#00c853] shadow-xl rounded-xl p-6 mb-10">
       <div className="flex flex-col items-center">
         <img
           src={dbUser?.photo || user?.photoURL}
@@ -75,15 +75,15 @@ const Profile = () => {
           className="w-28 h-28 rounded-full border shadow"
         />
 
-        <h1 className="text-2xl font-bold mt-3 capitalize">
+        <h1 className="text-2xl text-white font-bold mt-3 capitalize">
           {dbUser?.name || user?.displayName}
         </h1>
 
-        <h1 className="text-1xl text-gray-600 font-bold mt-3 capitalize">
+        <h1 className="text-1xl text-white font-bold mt-3 capitalize">
           <span className="font-bold">Bio:</span>{" "}
           {dbUser?.bio || "No bio added yet"}
         </h1>
-        <p className="text-gray-600">{user?.email}</p>
+        <p className="text-white">{user?.email}</p>
       </div>
 
       <div className="mt-6">
@@ -91,10 +91,10 @@ const Profile = () => {
           <div>
             <div className="flex justify-center mb-3">
               <Link to="/myInterest">
-                <h1 className="font-bold text-blue-500 mr-4">View Interests</h1>
+                <h1 className="font-bold text-blue-100 mr-4">View Interests</h1>
               </Link>
               <Link to="/addCrops">
-                <h1 className="font-bold text-blue-500">Add New Crop</h1>
+                <h1 className="font-bold text-blue-100">Add New Crop</h1>
               </Link>
             </div>
 

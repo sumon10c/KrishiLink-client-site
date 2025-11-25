@@ -50,18 +50,18 @@ const MyPosts = () => {
       You haven't added any crops yet.
     </p>
   ) :(
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
         {myCrops.map(crop => (
-          <div key={crop._id} className="border rounded p-4 shadow">
+          <div key={crop._id} className="rounded-[5px] bg-gradient-to-r from-[#ffe600] to-[#00c853] hover:from-red-600 hover:to-[#00c853] p-4 shadow">
             <img
               src={crop.image}
               alt={crop.name}
               className="w-full h-40 object-cover rounded"
             />
-            <h2 className="text-xl font-bold mt-2">{crop.name}</h2>
-            <p className="text-gray-600">Posted by: {crop.userEmail}</p>
-            <p className="text-gray-500 mt-1">{crop.description}</p>
-            <button onClick={() => handleDelete(crop._id)} className="btn">Delete</button>
+            <h2 className="text-xl text-white font-bold mt-2">{crop.name}</h2>
+            <p className="text-white">Posted by: {crop.userEmail}</p>
+            <p className="text-white mt-1">{crop.description}</p>
+            <button onClick={() => handleDelete(crop._id)} className="btn bg-green-600 hover:bg-red-600 text-white mt-3">Delete</button>
           </div>
         ))}
       </div>)}
