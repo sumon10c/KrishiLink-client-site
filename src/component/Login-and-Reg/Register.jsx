@@ -49,7 +49,7 @@ const Register = () => {
         };
     
         // create user in database
-        fetch("http://localhost:3000/user", {
+        fetch("https://krishilink-api-server.vercel.app/user", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -80,7 +80,7 @@ const Register = () => {
         };
 
         // create user in database
-        fetch("http://localhost:3000/user", {
+        fetch("https://krishilink-api-server.vercel.app/user", {
           method: "POST",
           headers: {
             "content-type": "application/json",

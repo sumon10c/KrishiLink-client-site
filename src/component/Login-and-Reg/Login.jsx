@@ -28,7 +28,7 @@ const Login = () => {
 
   };
 
-  const { singInWithGoogle } = use(AuthContext);
+  const { singInWithGoogle } = useContext(AuthContext);
   const handleGoogleSingIn = () => {
     singInWithGoogle()
       .then((result) => {

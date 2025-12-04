@@ -11,7 +11,7 @@ const Profile = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/user/${user.email}`)
+      fetch(`https://krishilink-api-server.vercel.app/user/${user.email}`)
         .then((res) => res.json())
         .then((data) => setDbUser(data));
     }
@@ -43,7 +43,7 @@ const Profile = () => {
 
     console.log("Updated Data:", updatedUser);
 
-    fetch(`http://localhost:3000/user/${dbUser._id}`, {
+    fetch(`https://krishilink-api-server.vercel.app/user/${dbUser._id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

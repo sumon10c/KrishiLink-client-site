@@ -1,18 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Banner from './Banner';
 import RecentProducts from './RecentProducts';
 
  
 
-const recentProductsPromise = fetch('http://localhost:3000/recent-products')
-.then(res=>res.json())
 
 
 const Home = () => {
+    const [recent, setRecent] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        fetch('https://krishilink-api-server.vercel.app/recent-products')
+            .then(res => res.json())
+            .then(data => {
+                setRecent(data);
+                setLoading(false);
+            })
+            .catch(() => setLoading(false));
+    }, []);
     return (
         <div>
             <Banner></Banner>
-            <RecentProducts recentProductsPromise={recentProductsPromise}></RecentProducts>
+            <RecentProducts recent={recent} loading={loading}></RecentProducts>
             
         </div>
     );

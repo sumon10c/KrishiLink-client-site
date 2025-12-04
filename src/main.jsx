@@ -48,7 +48,7 @@ const router = createBrowserRouter([
         Component:MyPost
       },
       {
-        path:'/addCrops',
+        path:'https://krishilink-api-server.vercel.app',
         Component:AddCrops
       },
       {
@@ -61,7 +61,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/cropDetails/:id',
-        loader: ({ params }) => fetch(`http://localhost:3000/products/${params.id}`),  
+        loader: ({ params }) => fetch(`https://krishilink-api-server.vercel.app/products/${params.id}`),  
         Component:CropDetalis
       }
     ]

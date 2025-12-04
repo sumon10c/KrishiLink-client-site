@@ -6,7 +6,7 @@
 //     const { user } = useContext(AuthContext);
 
 // useEffect(() => {
-//   fetch(`http://localhost:3000/interest/${user.email}`)
+//   fetch(`https://krishilink-api-server.vercel.app/interest/${user.email}`)
 //     .then(res => res.json())
 //     .then(data => setInterests(data));
 // }, [user.email]);
@@ -57,7 +57,7 @@ const MyInterest = () => {
   useEffect(() => {
     if (!user?.email) return;
 
-    fetch(`http://localhost:3000/interest/${user.email}`)
+    fetch(`https://krishilink-api-server.vercel.app/interest/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

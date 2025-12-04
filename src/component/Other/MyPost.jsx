@@ -9,7 +9,7 @@ const MyPosts = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/my-products?userEmail=${user.email}`)
+      fetch(`https://krishilink-api-server.vercel.app/my-products?userEmail=${user.email}`)
         .then(res => res.json())
         .then(data => setMyCrops(data));
     }
@@ -21,7 +21,7 @@ const MyPosts = () => {
     const confirm = window.confirm("Are you sure you want to delete this crop?");
     if (!confirm) return;
 
-    fetch(`http://localhost:3000/products/${id}`, {
+    fetch(`https://krishilink-api-server.vercel.app/products/${id}`, {
       method: "DELETE"
     })
       .then(res => res.json())

@@ -7,7 +7,7 @@ const Allcrops = () => {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:3000/products")
+    fetch("https://krishilink-api-server.vercel.app/products")
       .then((res) => res.json())
       .then((data) => {
         setCrops(data);

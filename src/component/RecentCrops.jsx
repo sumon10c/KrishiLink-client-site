@@ -29,6 +29,7 @@ const RecentCrops = ({crop}) => {
         <div className="card bg-base-100 w-96 shadow-sm ">
         <figure>
           <img
+             className="w-full h-60 object-cover rounded-t-xl"
             src={image}
             alt="Crop" />
         </figure>

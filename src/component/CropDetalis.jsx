@@ -60,7 +60,7 @@ const CropDetalis = () => {
       quantity : quantity,
       status: "panding",
     };
-    fetch("http://localhost:3000/interest", {
+    fetch("https://krishilink-api-server.vercel.app/interest", {
       method: "POST",
       headers:{
         'content-type': 'application/json'

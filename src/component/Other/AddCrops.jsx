@@ -18,7 +18,7 @@ const AddCrops = () => {
       postDate: new Date()
     };
 
-    fetch("http://localhost:3000/products", {
+    fetch("https://krishilink-api-server.vercel.app/products", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(crop)
