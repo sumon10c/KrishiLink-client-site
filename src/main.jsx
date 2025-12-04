@@ -8,7 +8,6 @@ import { RouterProvider } from "react-router/dom";
 import Root from './component/RootLAyout/Root.jsx';
 import Home from './component/Home/Home.jsx';
 import Allcrops from './component/AllCrops/Allcrops.jsx';
-import Error from './component/ErrorPage/Error.jsx';
 import Login from './component/Login-and-Reg/Login.jsx';
 import Register from './component/Login-and-Reg/Register.jsx';
 import AuthProvider from './context/AuthProvider.jsx';
@@ -17,11 +16,13 @@ import AddCrops from './component/Other/AddCrops.jsx';
 import Profile from './component/Login-and-Reg/Profile.jsx';
 import CropDetalis from './component/CropDetalis.jsx';
 import MyInterest from './component/Other/MyInterest.jsx';
+import ErrorPage from './component/errorPage/ErrorPage.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     Component:Root,
+    errorElement:<ErrorPage></ErrorPage>,
     children:[
       {
         index:true,
@@ -30,10 +31,6 @@ const router = createBrowserRouter([
       {
         path:'/allcrops',
         Component:Allcrops
-      },
-      {
-        path:'/*',
-        Component:Error
       },
       {
         path:'/login',
@@ -48,7 +45,7 @@ const router = createBrowserRouter([
         Component:MyPost
       },
       {
-        path:'https://krishilink-api-server.vercel.app',
+        path:'/addCrops',
         Component:AddCrops
       },
       {
