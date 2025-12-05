@@ -102,14 +102,14 @@ const Navbar = () => {
         {user ? (
           <button
             onClick={handleSingOut}
-            className="btn bg-gradient-to-r from-[#ffe600] to-[#00c853] hover:from-red-600 hover:to-[#00c853] text-white md:text-[20px] font-bold"
+            className="btn bg-gradient-to-r from-[#ffe600] to-[#00c853] hover:from-yellow-500 hover:to-[#037733] text-white md:text-[20px] font-bold"
           >
             LogOut
           </button>
         ) : (
           <div className="flex gap-3">
             <NavLink to="/login">
-              <button className="btn hover:from-red-600 hover:to-[#00c853] bg-gradient-to-r from-[#ffe600] to-[#00c853] text-white md:text-[20px] font-bold">
+              <button className="btnhover:from-yellow-500 hover:to-[#037733] bg-gradient-to-r from-[#ffe600] to-[#00c853] text-white md:text-[20px] font-bold">
                 LogIn
               </button>
             </NavLink>

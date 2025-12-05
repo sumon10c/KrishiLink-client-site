@@ -42,7 +42,7 @@ const CropCard = ({ crop }) => {
           <h1 className='text-white font-bold'>Price-PerUnit : {pricePerUnit} Taka</h1>
           <p className='text-white font-semibold'>{description}</p>
           <div className="card-actions justify-end">
-            <button onClick={handleDetails} className="btn font-bold bg-gradient-to-r from-[#ffe600] to-[#00c853] hover:from-red-600 hover:to-[#00c853] text-white">Crop Detalis</button>
+            <button onClick={handleDetails} className="btn font-bold bg-gradient-to-r from-[#ffe600] to-[#00c853] hover:from-yellow-500 hover:to-[#037733] text-white">Crop Detalis</button>
           </div>
         </div>
       </div>
